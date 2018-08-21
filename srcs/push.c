@@ -6,4 +6,5 @@ void    ft_push(t_stack *sa, t_stack *sb)
     return ;
     sa->top++;
     sa[sa->top] = sb[sb->top];
+	sb->top--;
 }
