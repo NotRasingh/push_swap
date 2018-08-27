@@ -12,34 +12,43 @@
 
 #include "../includes/pushswap.h"
 
-///NEED TO ACCOMODATE FOR NEGATIVE NUMBERS
-int	main(int argc, char **argv)
+int ft_addnum(t_stack *sa, char *num)
 {
-	t_stack	sa;
-	int		i;
-	int		c;
-	int		j;
+	int i;
 
-	i = 1;
-	c = 0;
+	i = 0;
+	while (num[i] != ' ')
+		i++;
+	sa->num[sa->top++] = ft_atoi(num);
+	return (i);
+}
+
+int main(int argc, char **argv)
+{
+	t_stack sa;
+	int i;
+	int j;
+
+	i = 0;
 	j = 0;
 	sa.num = (long*)malloc(BUFF_SIZE);
-	sa.top = c;
-	while (i < argc)
+	sa.top = 0;
+//	ft_error(argv[i]);
+	while (++i < argc)
 	{
 		j = 0;
 		while (argv[i][j])
 		{
-			if (ft_isdigit(argv[i][j]))
-			{	sa.num[sa.top++] = ft_atoi(&argv[i][j]);
-			ft_putnbr(sa.num[sa.top - 1]);
-			ft_putchar('\n');
+			if (ft_isdigit(argv[i][j]) || argv[i][j] == '-')
+			{
+				j = j + ft_addnum(&sa, &argv[i][j]);
+				if (j > (int)ft_strlen(argv[i]))
+				break;
 			}
-			j++;
+			else
+				j++;
 		}
-		i++;
 	}
-	ft_putstr("TOP: ");
-	ft_putnbr(sa.top);
+	ft_splitstack(&sa);
 	return (0);
 }
