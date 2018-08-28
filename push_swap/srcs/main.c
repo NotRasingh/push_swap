@@ -6,7 +6,7 @@
 /*   By: rasingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 13:46:18 by rasingh           #+#    #+#             */
-/*   Updated: 2018/08/23 14:49:52 by rasingh          ###   ########.fr       */
+/*   Updated: 2018/08/28 14:35:00 by rasingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int ft_addnum(t_stack *sa, char *num)
 	int i;
 
 	i = 0;
-	while (num[i] != ' ')
+	while (num[i] != ' ' && num[i])
 		i++;
 	sa->num[sa->top++] = ft_atoi(num);
 	return (i);
@@ -43,7 +43,7 @@ int main(int argc, char **argv)
 			{
 				j = j + ft_addnum(&sa, &argv[i][j]);
 				if (j > (int)ft_strlen(argv[i]))
-				break;
+					break;
 			}
 			else
 				j++;

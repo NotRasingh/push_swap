@@ -6,50 +6,74 @@
 /*   By: rasingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 13:46:54 by rasingh           #+#    #+#             */
-/*   Updated: 2018/08/23 14:05:58 by rasingh          ###   ########.fr       */
+/*   Updated: 2018/08/28 14:36:06 by rasingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-void	ft_revrotate(t_stack *sa)
+void	ft_revrota(t_stack *sa)
 {
 	int		i;
 	long	tmp;
 
-	i = sa->top;
-	while (i > 0)
+	i = sa->top - 1;
+	tmp = sa->num[i];
+	while (i >= 0)
 	{
-		tmp = sa->num[i - 1];
-		sa->num[i - 1] = sa->num[i];
-		sa->num[i] = tmp;
+		sa->num[i] = sa->num[i - 1];
 		i--;
+		sa->num[i] = tmp;
 	}
+	sa->num[0] = tmp;
+	ft_putendl("rra");
 }
 
-void	ft_rotateboth(t_stack *sa, t_stack *sb)
-{
-	ft_rotate(sa);
-	ft_rotate(sb);
-}
-
-void	ft_rotate(t_stack *sa)
+void    ft_revrotb(t_stack *sa)
 {
 	int		i;
 	long	tmp;
+
+	i = sa->top - 1;
+	tmp = sa->num[i];
+	while (i >= 0)
+	{
+		sa->num[i] = sa->num[i - 1];
+		i--;
+		sa->num[i] = tmp;
+	}
+	sa->num[0] = tmp;
+	ft_putendl("rrb");
+}
+
+void	ft_rota(t_stack *sa)
+{
+	int     i;
+	long    tmp;
 
 	i = 0;
-	while (i < sa->top)
+	tmp = sa->num[0];
+	while (i < sa->top - 1)
+	{
+		sa->num[i] = sa->num[i + 1];
+		i++;
+		sa->num[i] = tmp;
+	}
+	ft_putendl("ra");
+}
+
+void    ft_rotb(t_stack *sa)
+{
+	int     i;
+	long    tmp;
+
+	i = 0;
+	while (i < sa->top - 1)
 	{
 		tmp = sa->num[i + 1];
 		sa->num[i + 1] = sa->num[i];
 		sa->num[i] = tmp;
 		i++;
 	}
-}
-
-void	ft_revrotateboth(t_stack *sa, t_stack *sb)
-{
-	ft_revrotate(sa);
-	ft_revrotate(sb);
+	ft_putendl("rb");
 }

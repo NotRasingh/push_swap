@@ -6,7 +6,7 @@
 /*   By: rasingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 11:21:54 by rasingh           #+#    #+#             */
-/*   Updated: 2018/08/23 14:10:59 by rasingh          ###   ########.fr       */
+/*   Updated: 2018/08/28 10:03:47 by rasingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,6 @@
 # include "../../checker/includes/checker.h"
 # define BUFF_SIZE 4096
 
+void	ft_splitstack(t_stack *sa);
 #endif
 
