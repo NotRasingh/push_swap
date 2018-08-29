@@ -6,12 +6,12 @@
 #    By: rasingh <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/23 11:19:30 by rasingh           #+#    #+#              #
-#    Updated: 2018/08/28 10:07:32 by rasingh          ###   ########.fr        #
+#    Updated: 2018/08/29 11:12:08 by rasingh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-SOURCES = srcs/main.c srcs/sort.c ../checker/srcs/*.c
+SOURCES = srcs/main.c srcs/sort.c srcs/swap.c srcs/push.c srcs/rotate.c srcs/rotboth.c
 INCLUDES = includes/libft/libft.a
 
 $(NAME):

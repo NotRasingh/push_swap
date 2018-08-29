@@ -6,11 +6,11 @@
 /*   By: rasingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/28 09:59:58 by rasingh           #+#    #+#             */
-/*   Updated: 2018/08/29 11:07:16 by rasingh          ###   ########.fr       */
+/*   Updated: 2018/08/29 11:02:57 by rasingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../includes/pushswap.h"
 
 void    ft_revrotateboth(t_stack *sa, t_stack *sb)
 {

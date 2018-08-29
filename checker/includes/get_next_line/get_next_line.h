@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotboth.c                                          :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rasingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/28 09:59:58 by rasingh           #+#    #+#             */
-/*   Updated: 2018/08/29 11:07:16 by rasingh          ###   ########.fr       */
+/*   Created: 2018/06/12 10:31:54 by rasingh           #+#    #+#             */
+/*   Updated: 2018/08/29 11:10:30 by rasingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# define BUFF_SIZE 32
+# include "../libft/libft.h"
 
-void    ft_revrotateboth(t_stack *sa, t_stack *sb)
-{
-    ft_revrota(sa);
-    ft_revrotb(sb);
-}
+int	get_next_line(const int fd, char **line);
 
-void    ft_rotateboth(t_stack *sa, t_stack *sb)
-{
-    ft_rota(sa);
-    ft_rotb(sb);
-}
+#endif

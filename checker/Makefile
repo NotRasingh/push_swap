@@ -6,13 +6,13 @@
 #    By: rasingh <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/21 13:01:47 by rasingh           #+#    #+#              #
-#    Updated: 2018/08/23 11:24:17 by rasingh          ###   ########.fr        #
+#    Updated: 2018/08/29 11:18:15 by rasingh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = checker
-SOURCES = srcs/main.c srcs/swap.c srcs/push.c srcs/rotate.c
-INCLUDES = includes/libft/libft.a
+SOURCES = srcs/checker.c srcs/swap.c srcs/push.c srcs/rotate.c srcs/rotboth.c 
+INCLUDES = includes/libft/libft.a includes/get_next_line/get_next_line.c
 
 $(NAME):
 	@make -C includes/libft
