@@ -6,13 +6,13 @@
 /*   By: rasingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 13:46:18 by rasingh           #+#    #+#             */
-/*   Updated: 2018/08/29 10:42:45 by rasingh          ###   ########.fr       */
+/*   Updated: 2018/09/07 15:14:04 by rasingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pushswap.h"
 
-int ft_addnum(t_stack *sa, char *num)
+int	ft_addnum(t_stack *sa, char *num)
 {
 	int i;
 
@@ -23,17 +23,16 @@ int ft_addnum(t_stack *sa, char *num)
 	return (i);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_stack sa;
-	int i;
-	int j;
+	t_stack	sa;
+	int		i;
+	int		j;
 
 	i = 0;
-	j = 0;
 	sa.num = (long*)malloc(BUFF_SIZE);
 	sa.top = 0;
-//	ft_error(argv[i]);
+	//	ft_error(argv[i]);
 	while (++i < argc)
 	{
 		j = 0;
@@ -43,7 +42,7 @@ int main(int argc, char **argv)
 			{
 				j = j + ft_addnum(&sa, &argv[i][j]);
 				if (j > (int)ft_strlen(argv[i]))
-					break;
+					break ;
 			}
 			else
 				j++;

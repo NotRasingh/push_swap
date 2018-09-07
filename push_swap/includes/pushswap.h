@@ -6,20 +6,20 @@
 /*   By: rasingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 11:21:54 by rasingh           #+#    #+#             */
-/*   Updated: 2018/08/29 11:13:08 by rasingh          ###   ########.fr       */
+/*   Updated: 2018/09/07 15:19:52 by rasingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHWAP_H
-# define PUSHWAP_H
-# include "libft/libft.h"
+#ifndef PUSHSWAP_H
+# define PUSHSWAP_H
+# include "../../libft/libft.h"
 # define BUFF_SIZE 4096
 
-typedef struct  s_stack
+typedef struct	s_stack
 {
-	long    *num;
-	long     top;
-}               t_stack;
+	long		*num;
+	long		top;
+}				t_stack;
 
 void			ft_rota(t_stack *sa);
 void			ft_revrota(t_stack *sa);
@@ -38,4 +38,3 @@ void			ft_pushb(t_stack *sa, t_stack *sb);
 void			ft_splitstack(t_stack *sa);
 
 #endif
-

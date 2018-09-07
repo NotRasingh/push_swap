@@ -6,7 +6,7 @@
 /*   By: rasingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 13:46:54 by rasingh           #+#    #+#             */
-/*   Updated: 2018/08/29 11:02:49 by rasingh          ###   ########.fr       */
+/*   Updated: 2018/09/07 15:15:09 by rasingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_revrota(t_stack *sa)
 	ft_putendl("rra");
 }
 
-void    ft_revrotb(t_stack *sa)
+void	ft_revrotb(t_stack *sa)
 {
 	int		i;
 	long	tmp;
@@ -48,8 +48,8 @@ void    ft_revrotb(t_stack *sa)
 
 void	ft_rota(t_stack *sa)
 {
-	int     i;
-	long    tmp;
+	int		i;
+	long	tmp;
 
 	i = 0;
 	tmp = sa->num[0];
@@ -62,10 +62,10 @@ void	ft_rota(t_stack *sa)
 	ft_putendl("ra");
 }
 
-void    ft_rotb(t_stack *sa)
+void	ft_rotb(t_stack *sa)
 {
-	int     i;
-	long    tmp;
+	int		i;
+	long	tmp;
 
 	i = 0;
 	while (i < sa->top - 1)

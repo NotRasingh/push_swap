@@ -6,11 +6,11 @@
 /*   By: rasingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 13:46:54 by rasingh           #+#    #+#             */
-/*   Updated: 2018/08/29 11:07:11 by rasingh          ###   ########.fr       */
+/*   Updated: 2018/09/07 15:23:48 by rasingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../../push_swap/includes/pushswap.h"
 
 void	ft_revrota(t_stack *sa)
 {
@@ -28,7 +28,7 @@ void	ft_revrota(t_stack *sa)
 	sa->num[0] = tmp;
 }
 
-void    ft_revrotb(t_stack *sa)
+void	ft_revrotb(t_stack *sa)
 {
 	int		i;
 	long	tmp;
@@ -46,8 +46,8 @@ void    ft_revrotb(t_stack *sa)
 
 void	ft_rota(t_stack *sa)
 {
-	int     i;
-	long    tmp;
+	int		i;
+	long	tmp;
 
 	i = 0;
 	tmp = sa->num[0];
@@ -59,10 +59,10 @@ void	ft_rota(t_stack *sa)
 	}
 }
 
-void    ft_rotb(t_stack *sa)
+void	ft_rotb(t_stack *sa)
 {
-	int     i;
-	long    tmp;
+	int		i;
+	long	tmp;
 
 	i = 0;
 	while (i < sa->top - 1)

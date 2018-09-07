@@ -6,27 +6,27 @@
 /*   By: rasingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/29 10:22:02 by rasingh           #+#    #+#             */
-/*   Updated: 2018/08/29 11:18:57 by rasingh          ###   ########.fr       */
+/*   Updated: 2018/09/07 15:25:53 by rasingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-
-int ft_addnum(t_stack *sa, char *num)
+int		ft_addnum(t_stack *sa, char *num)
 {
-    int i;
+	int i;
 
-    i = 0;
-    while (num[i] != ' ' && num[i])
-        i++;
-    sa->num[sa->top++] = ft_atoi(num);
-    return (i);
+	i = 0;
+	while (num[i] != ' ' && num[i])
+		i++;
+	sa->num[sa->top++] = ft_atoi(num);
+	return (i);
 }
 
-void	ft_check (t_stack sa, t_stack sb)
+void	ft_check(t_stack sa, t_stack sb)
 {
 	int	i;
+	int	tmp;
 
 	i = 1;
 	if (sb.top != 0)
@@ -34,16 +34,18 @@ void	ft_check (t_stack sa, t_stack sb)
 		write(1, "KO", 2);
 		return ;
 	}
+	tmp = sa.num[0];
 	while (i < sa.top)
 	{
-		if (sa.num[i] < sa.num[i - 1])
-		{	
-			write (1, "KO", 2);
+		if (sa.num[i] < tmp)
+		{
+			write(1, "KO", 2);
 			return ;
 		}
+		tmp = sa.num[i];
 		i++;
 	}
-	write (1, "OK", 2);
+	write(1, "OK", 2);
 }
 
 void	ft_op(t_stack *sa, t_stack *sb, char *str)
@@ -70,7 +72,7 @@ void	ft_op(t_stack *sa, t_stack *sb, char *str)
 		ft_revrotb(sb);
 	else if (ft_strcmp(str, "rrr") == 0)
 		ft_revrotateboth(sa, sb);
-	else 
+	else
 		return ;
 }
 
@@ -87,38 +89,38 @@ void	ft_getop(t_stack sa)
 	while (ret)
 	{
 		if (!ret)
-			break;
+			break ;
 		ret = get_next_line(0, &line);
 		ft_op(&sa, &sb, line);
 	}
+	ft_check(sa, sb);
 }
 
-int	main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
-    t_stack sa;
-    int i;
-    int j;
+	t_stack	sa;
+	int		i;
+	int		j;
 
-    i = 0;
-    j = 0;
-    sa.num = (long*)malloc(BUFF_SIZE);
-    sa.top = 0;
-//  ft_error(argv[i]);
-    while (++i < argc)
-    {
-        j = 0;
-        while (argv[i][j])
-        {
-            if (ft_isdigit(argv[i][j]) || argv[i][j] == '-')
-            {
-                j = j + ft_addnum(&sa, &argv[i][j]);
-                if (j > (int)ft_strlen(argv[i]))
-                    break;
-            }
-            else
-                j++;
-        }
-    }
+	i = 0;
+	sa.num = (long*)malloc(BUFF_SIZE);
+	sa.top = 0;
+	//  ft_error(argv[i]);
+	while (++i < argc)
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if (ft_isdigit(argv[i][j]) || argv[i][j] == '-')
+			{
+				j = j + ft_addnum(&sa, &argv[i][j]);
+				if (j > (int)ft_strlen(argv[i]))
+					break ;
+			}
+			else
+				j++;
+		}
+	}
 	ft_getop(sa);
 	return (0);
 }
