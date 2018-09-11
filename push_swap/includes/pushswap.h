@@ -6,7 +6,7 @@
 /*   By: rasingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 11:21:54 by rasingh           #+#    #+#             */
-/*   Updated: 2018/09/07 15:19:52 by rasingh          ###   ########.fr       */
+/*   Updated: 2018/09/10 11:22:59 by rasingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,8 @@ void			ft_pusha(t_stack *sa, t_stack *sb);
 void			ft_pushb(t_stack *sa, t_stack *sb);
 void			ft_splitstack(t_stack *sa);
 
+int				ft_error(int argc, char **argv);
+int				ft_dupcheck(t_stack sa);
+int				ft_addnum(t_stack *sa, char *num);
+t_stack			ft_init(int argc, char**argv);
 #endif

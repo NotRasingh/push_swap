@@ -6,7 +6,7 @@
 /*   By: rasingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 15:16:59 by rasingh           #+#    #+#             */
-/*   Updated: 2018/09/07 15:17:45 by rasingh          ###   ########.fr       */
+/*   Updated: 2018/09/11 11:27:48 by rasingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,6 @@ void	ft_splitstack(t_stack *sa)
 		ft_pushb(sa, &sb);
 	}
 	ft_sort(sa, sb);
+	free((void*)sb.num);
+	free((void*)sa->num);
 }

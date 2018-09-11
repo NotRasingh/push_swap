@@ -6,7 +6,7 @@
 /*   By: rasingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/29 10:22:02 by rasingh           #+#    #+#             */
-/*   Updated: 2018/09/07 15:25:53 by rasingh          ###   ########.fr       */
+/*   Updated: 2018/09/11 12:40:37 by rasingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_check(t_stack sa, t_stack sb)
 	write(1, "OK", 2);
 }
 
-void	ft_op(t_stack *sa, t_stack *sb, char *str)
+int		ft_op(t_stack *sa, t_stack *sb, char *str)
 {
 	if (ft_strcmp(str, "sa") == 0)
 		ft_swapa(sa);
@@ -73,7 +73,8 @@ void	ft_op(t_stack *sa, t_stack *sb, char *str)
 	else if (ft_strcmp(str, "rrr") == 0)
 		ft_revrotateboth(sa, sb);
 	else
-		return ;
+		return (1);
+	return (0);
 }
 
 void	ft_getop(t_stack sa)
@@ -88,39 +89,31 @@ void	ft_getop(t_stack sa)
 	line = NULL;
 	while (ret)
 	{
+		ret = get_next_line(0, &line);
 		if (!ret)
 			break ;
-		ret = get_next_line(0, &line);
-		ft_op(&sa, &sb, line);
+		if (ft_op(&sa, &sb, line))
+		{
+			ft_putstr_fd("ERROR\n", 2);
+			exit(0);
+		}
+		free(line);
 	}
 	ft_check(sa, sb);
+	free((void*)sa.num);
+	free((void*)sb.num);
 }
 
 int		main(int argc, char **argv)
 {
-	t_stack	sa;
-	int		i;
-	int		j;
+	t_stack sa;
 
-	i = 0;
-	sa.num = (long*)malloc(BUFF_SIZE);
-	sa.top = 0;
-	//  ft_error(argv[i]);
-	while (++i < argc)
-	{
-		j = 0;
-		while (argv[i][j])
-		{
-			if (ft_isdigit(argv[i][j]) || argv[i][j] == '-')
-			{
-				j = j + ft_addnum(&sa, &argv[i][j]);
-				if (j > (int)ft_strlen(argv[i]))
-					break ;
-			}
-			else
-				j++;
-		}
-	}
+	if (ft_error(argc, argv))
+		return (0);
+	sa = ft_init(argc, argv);
+	if (ft_dupcheck(sa))
+		return (0);
 	ft_getop(sa);
+	sleep(50);
 	return (0);
 }

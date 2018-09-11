@@ -6,12 +6,12 @@
 #    By: rasingh <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/21 13:01:47 by rasingh           #+#    #+#              #
-#    Updated: 2018/09/07 15:10:56 by rasingh          ###   ########.fr        #
+#    Updated: 2018/09/10 11:11:59 by rasingh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = checker
-SOURCES = srcs/checker.c srcs/swap.c srcs/push.c srcs/rotate.c srcs/rotboth.c
+SOURCES = srcs/checker.c srcs/swap.c srcs/push.c srcs/rotate.c srcs/rotboth.c srcs/error.c
 INCLUDES = ../libft/libft.a includes/get_next_line/get_next_line.c
 
 $(NAME):
