@@ -6,7 +6,7 @@
 /*   By: rasingh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 11:06:32 by rasingh           #+#    #+#             */
-/*   Updated: 2018/09/14 08:58:40 by rasingh          ###   ########.fr       */
+/*   Updated: 2018/09/18 11:32:27 by rasingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int		ft_error(int argc, char **argv)
 					&& argv[i][j] != '+' && argv[i][j] != ' ')
 			{
 				ft_putstr_fd("Error\n", 2);
-				return (1);
+				exit(0);
 			}
 			j++;
 		}
@@ -78,14 +78,14 @@ int		ft_dupcheck(t_stack sa)
 			if (sa.num[i] == sa.num[j] && j != i)
 			{
 				ft_putstr_fd("Error\n", 2);
-				return (1);
+				exit(0);
 			}
 			j++;
 		}
 		if (sa.num[i] > 2147483647 || sa.num[i] < -2147483647)
 		{
 			ft_putstr_fd("Error\n", 2);
-			return (1);
+			exit(0);
 		}
 		i++;
 	}
